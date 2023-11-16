@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://cemhe08uqjihv"]
+
+[ext_resource type="PackedScene" uid="uid://b1dcqfqee4cp" path="res://arena.glb" id="1_rxduv"]
+[ext_resource type="Texture2D" uid="uid://bkjae7r81h3xp" path="res://textures/texture_10.png" id="2_bi4p6"]
+[ext_resource type="Texture2D" uid="uid://ctunlxhaidhnc" path="res://textures/texture_09.png" id="3_8y8uj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dsoyb"]
+albedo_texture = ExtResource("2_bi4p6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2vm1"]
+albedo_texture = ExtResource("3_8y8uj")
+uv1_triplanar = true
+
+[node name="arena" instance=ExtResource("1_rxduv")]
+
+[node name="arena" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dsoyb")
+surface_material_override/1 = SubResource("StandardMaterial3D_m2vm1")
+
+[node name="StaticBody3D" parent="arena" index="0"]
+collision_mask = 2
